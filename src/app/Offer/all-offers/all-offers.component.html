@@ -1,0 +1,127 @@
+<!--<div class="container">
+  <div class="form-group">
+      <form >
+        <ng-container *ngFor="let Offer of Offers">
+
+        <label for="name">Offer Title</label>
+        <label for="name">{{Offer.Title}}</label>
+
+        <label for="email">Offer Description</label>
+        <label for="name">{{Offer.Description}}</label>
+
+        <label for="password">Offer Ville</label>
+        <label for="name">{{Offer.Ville}}</label>
+
+        <label for="confirm_password">Category Offer</label>
+        <label for="name">{{Offer.Category}}</label>
+        <button type="button" class="btn btn-primary">Apply</button>
+      </ng-container>
+     </form>
+  </div>
+</div>-->
+<div class="AllContent container-fluid animate__animated animate__zoomIn">
+  <div class="search mb-3">
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Filter Offers
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body d-in">
+        <div class="row d-block d-md-flex g-3">
+          <div class="col ff">
+            <label for="Ville"  class="tem">Ville</label>
+          </div>
+          <div class="col-3 ff">
+            <input type="text" #vill class="tem form-control" placeholder="Rabat">
+          </div>
+          <div class="col-3 ff">
+            <label for="Ville"  class="tem">Category</label>
+          </div>
+          <div class="col-3 ff">
+            <input type="text"  class="form-control ss tem" #categ placeholder="Informatique">
+          </div>
+
+          <div class="col-12">
+            <button type="button" (click)="filter(vill.value,categ.value)" class="btn btn-primary">Searche</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row ss d-block d-lg-flex d-md-flex d-sm-flex">
+    <div class="leftform col-4 text-start " *ngIf="visibl">
+      <ng-container *ngFor="let Offer of Offers">
+        <div class="topformm">
+            <h5 class="offertitle h5 mb-3">{{Offer.Title}}</h5>
+            <div class="row d-block d-md-flex g-3">
+              <div class="col-12 tt">
+                <label for="Ville" class="tem" >created at {{Offer.time}}</label>
+              </div>
+              <div class="col-12 tt">
+                <label for="Ville" class="tem">ville : {{Offer.Ville}}</label>
+              </div>
+              <div class="col-12 tt">
+                <label for="Ville" class="tem">Category : {{Offer.Category}}</label>
+              </div>
+            </div>
+            <button class="btn btn-primary" (click)="OfferDetail(Offer.id)">Details</button>
+        </div>
+      </ng-container>
+
+    </div>
+    <div class="formemidle d-none col-8 d-sm-block text-start" id="testt" *ngIf="visible">
+      <form action="" >
+        <div class="topform ">
+            <h1 class="offertitle h1" >{{this.firstOffer.Title}}</h1>
+            <div class="details d-block">
+                  <label for="" class="d-block"> created {{this.firstOffer.time}}</label>
+                  <label for="" class="d-block">ville : {{this.firstOffer.Ville}}</label>
+                  <label for="" class="d-block">Category : {{this.firstOffer.Category}}</label>
+            </div>
+        </div>
+        <div class="bottomform d-block ">
+            <h3 class="desctitle">Description</h3>
+            <p class="despara">
+              {{this.firstOffer.Description}}
+
+            </p>
+
+        </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          APPLY FOR THIS OFFER
+        </button>
+        <button type="button" *ngIf="mm" class="btn btn-secondary mt-3" (click)="close()">
+          CLOSE
+        </button>
+      </form>
+    </div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">APPLY</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="applyform">
+          <label for="pdf" class="apply">Upload CV pdf Form</label>
+          <input type="file" class="apply" (change)="uploadpdf($event)" name="pdf" id="pdf" class="form-control" aria-describedby="helpId">
+          <label for="pdf" class="apply">Full Name</label>
+          <input type="text" class="apply mb-2" style="width: 100%;" #fullname>
+
+
+          <button type="button" (click)="onupload(fullname.value)" class="btn btn-primary">APPLY</button>
+       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

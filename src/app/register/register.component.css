@@ -1,0 +1,10 @@
+.signtitle{
+  font-size: 40px !important;
+  color: rgb(31, 94, 212);
+  font-weight: bold;
+}
+.signcontent{
+  max-width: 500px !important;
+}
+
+

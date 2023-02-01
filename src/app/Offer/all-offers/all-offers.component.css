@@ -1,0 +1,90 @@
+
+
+.leftform{
+  background-color: rgb(252, 252, 252);
+  max-height: 500px !important;
+  overflow-y: scroll;
+}
+.formemidle{
+  max-height: 500px !important;
+  overflow-y: scroll;
+  min-height: 500px;
+}
+.formemidle{
+  background-color: rgba(214, 214, 214, 0.685);
+  border: 2px solid rgb(238, 238, 238);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(0, 4, 214, 0.568) 0px 10px 36px 0px, rgba(8, 15, 46, 0.06) 0px 0px 0px 1px;
+
+}
+.offertitle{
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+.despara{
+  text-align: justify;
+}
+.desctitle{
+margin-bottom: 10px;}
+
+.AllContent{
+  width: 100% !important;
+}
+
+
+.chatlit{
+
+  display: block;
+  background-color: rgba(161, 161, 161, 0.308);
+  color: rgb(3, 3, 3);
+  padding: 10px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+
+}
+.topformm{
+  border: 1px solid rgb(216, 211, 211);
+  margin: 5px;
+  border-radius: 10px;
+  display: block;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.inoos{
+  width: 30px;
+}
+
+.search{
+width: 100% !important;
+}
+.btn{
+width: 100%;
+}
+.tt{
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 575px){
+.leftform{
+  width: 100% !important;
+}
+
+}
+@media only screen and (max-width: 835px){
+
+.leftform{
+  width: 100% !important;
+}
+
+.tem{
+  width: 100% !important;
+}
+.ff{
+  width: 100% !important;
+}
+
+}

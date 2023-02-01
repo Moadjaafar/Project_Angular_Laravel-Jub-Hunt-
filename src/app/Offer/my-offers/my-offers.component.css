@@ -1,0 +1,16 @@
+
+
+.formemidle{
+  background-color: rgba(0, 0, 0, 0.007);
+  width: 70%;
+  margin-right: 15%;
+  margin-left: 15%;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 10px;
+  padding: 1%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  margin-top: 5px;
+  font-size: small;
+
+
+}

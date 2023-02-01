@@ -1,0 +1,91 @@
+<!--<div class="container">
+  <div class="form-group">
+      <form>
+        <ng-container *ngFor="let Offer of Offers">
+        <label for="name">Offer Title</label>
+        <input type="text" #idoffer value="{{Offer.id}}">
+        <label for="name">{{Offer.Title}}</label>
+
+        <label for="email">Offer Description</label>
+        <label for="name">{{Offer.Description}}</label>
+
+        <label for="password">Offer Ville</label>
+        <label for="name">{{Offer.Ville}}</label>
+
+        <label for="confirm_password">Category Offer</label>
+        <label for="name">{{Offer.Category}}</label>
+        <button type="button" class="btn btn-primary" routerLink="UpdateOfr/{{Offer.id}}">Update</button>
+        <button type="button" class="btn btn-primary float-right" (click)="DeleteOffer(idoffer.value)">Delete</button>
+      </ng-container>
+     </form>
+  </div>
+</div>
+
+-->
+<ng-container *ngFor="let Offer of Offers">
+<div class="formemidle d-sm-block text-start animate__animated animate__zoomIn">
+    <div class="topform">
+      <h1 class="offertitle h1">{{Offer.Title}}</h1>
+      <input type="text" style="display: none;" #idoffer value="{{Offer.id}}">
+
+      <table style="width:100%">
+          <tr>
+              <td >created at {{Offer.time}}</td>
+              <td style="float: right;">ville : {{Offer.Ville}}</td>
+          </tr>
+          <tr>
+              <td>Contracte : Stage</td>
+              <td style="float: right;">Category : informatique</td>
+          </tr>
+      </table>
+  </div>
+  <div class="bottomform d-block">
+      <h3>Description</h3>
+      <p>
+        {{Offer.Description}}
+          
+      </p>
+  </div>
+
+  <div class="d-flex">
+    <button class="btn btn-primary w-25 mt-4 mx-2 mb-2" routerLink="UpdateOfr/{{Offer.id}}">UPDATE</button>
+    <button type="button" class="btn btn-primary w-50 mt-4 mx-2 mb-2" (click)="peapleApply(Offer.id)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      PEAPLE WHO AAPLY FOR THIS OFFER
+    </button>
+    <button class="btn btn-primary w-25 mt-4 mx-2 mb-2" (click)="DeleteOffer(idoffer.value)">DELETE</button>
+  </div>
+</div>
+</ng-container>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">PEAPLE WHO APPLY</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <ng-container *ngFor="let p of listpeaples">
+
+        <form class="applyform d-flex row">
+          <div class="col">
+            <label for="" class="">Full Name</label>
+          </div>
+          <div class="col">
+            <label for="" class="">{{p.full_name}}</label>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" (click)="downloadcv(p.id)">Download CV</button>
+          </div>
+          </form>
+          <hr>
+        </ng-container>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
